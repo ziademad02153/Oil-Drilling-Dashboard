@@ -2,7 +2,9 @@
 import React, { useContext } from 'react';
 import { WellContext } from '../context/WellContext';
 
-const DataVisualization = () => {
+type Row = { [key: string]: any };
+
+const DataVisualization: React.FC = () => {
   const { chartData } = useContext(WellContext);
 
   if (!chartData || chartData.length === 0) {

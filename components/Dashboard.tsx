@@ -3,14 +3,14 @@ import React, { useState, useContext } from 'react';
 import { WellContext } from '../context/WellContext';
 import DataVisualization from './DataVisualization';
 
-const Dashboard = () => {
+const Dashboard: React.FC = () => {
   const { selectedWell, setChartData } = useContext(WellContext);
-  const [activeTab, setActiveTab] = useState('Drilling Monitoring');
-  const [isLoading, setIsLoading] = useState(false);
-  const [message, setMessage] = useState('');
++  const [activeTab, setActiveTab] = useState<string>('Drilling Monitoring');
++  const [isLoading, setIsLoading] = useState<boolean>(false);
++  const [message, setMessage] = useState<string>('');
 
-  const handleFileUpload = async (event) => {
-    const file = event.target.files[0];
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
     if (!file) return;
 
     setIsLoading(true);
@@ -73,7 +73,9 @@ const Dashboard = () => {
   );
 };
 
-const Tab = ({ name, activeTab, setActiveTab }) => (
+type TabProps = { name: string; activeTab: string; setActiveTab: (n: string) => void };
+
+const Tab: React.FC<TabProps> = ({ name, activeTab, setActiveTab }) => (
   <button
     className={`px-4 py-2 -mb-px ${
       activeTab === name ? 'border-b-2 border-blue-500 text-blue-600' : 'text-gray-500'
