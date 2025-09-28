@@ -2,8 +2,6 @@ Author: ziad emad allam
 
 # Oil Drilling Dashboard & AI Chatbot
 
-This repository contains the source code and documentation for the Senior Frontend Engineer 24-hour Coding Homework. The project is an AI SaaS platform for a well drilling company, featuring data visualization and a chatbot assistant.
-
 ## 1. Design Document
 
 ### 1.1. Problem Statement
